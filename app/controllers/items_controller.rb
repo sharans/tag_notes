@@ -6,7 +6,8 @@ class ItemsController < ApplicationController
 
   def create
     RetroItem.new(params[:retro_item]).save!
-    render new
+    flash[:notice] = "Item saved successfully"
+    redirect_to :new_item
   end
 
   def index
