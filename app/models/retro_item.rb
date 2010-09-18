@@ -1,5 +1,5 @@
 class RetroItem < ActiveRecord::Base
   acts_as_taggable
-  CATEGORIES = ["positives", "concerns", "wishes"]
+  CATEGORIES = ["Positives", "Concerns", "Wishes", "Risks"]
 
 end
