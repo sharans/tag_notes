@@ -1,0 +1,9 @@
+<h2><%= params[:tag]%></h2>
+<% RetroItem::CATEGORIES.each do |category| %>
+  <h3> <%=category%></h3>
+	<% @items.each do |item| %>
+	    <% if item.category == category %>
+		<div> <%=item.content %> </div>
+		<% end %>
+	<% end %>
+<% end %>

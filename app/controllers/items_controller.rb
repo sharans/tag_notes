@@ -12,4 +12,13 @@ class ItemsController < ApplicationController
 
   def index
   end
+  
+  def tag_cloud
+    @tags = RetroItem.tag_counts_on(:tags)
+  end
+  
+  def tag
+    @items = RetroItem.tagged_with(params[:tag])
+  end
+  
 end
