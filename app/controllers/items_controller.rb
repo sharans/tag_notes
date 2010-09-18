@@ -5,8 +5,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = RetroItem.new(params[:retro_item])
-    (render :text => "Item saved succesfully" and return) if @item.save!
+    RetroItem.new(params[:retro_item]).save!
     render new
   end
 
