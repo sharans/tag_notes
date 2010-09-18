@@ -9,6 +9,10 @@
       <%= f.select(:category, RetroItem::CATEGORIES) %>
     </div>
     <div>
+      <%= f.label :count, "Vote/Count" %>
+      <%= f.text_field :count%>
+    </div>
+    <div>
       <%= f.label :tag_list, "Tag List" %>
       <%= f.text_field :tag_list %>
     </div>

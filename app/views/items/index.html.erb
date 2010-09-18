@@ -1,0 +1,10 @@
+<% form_tag :url => root_url do %>
+
+<div>
+  <%= label_tag :category, "Category" %>
+  <%= select_tag("category", options_for_select(["test","1"])) %>
+</div>
+
+<%= submit_tag "Save" %>
+
+<% end %>

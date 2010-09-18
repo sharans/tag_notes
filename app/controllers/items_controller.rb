@@ -9,4 +9,7 @@ class ItemsController < ApplicationController
     (render :text => "Item saved succesfully" and return) if @item.save!
     render new
   end
+
+  def index
+  end
 end

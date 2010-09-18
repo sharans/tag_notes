@@ -4,7 +4,8 @@ ActionController::Routing::Routes.draw do |map|
    map.with_options :controller => "items" do |item|
     item.new_item '/items/new', :action => "new"
     item.create_item '/items/create', :action => "create" 
-  end
+   end
+   map.root :controller => "items", :action => "index"
   # Sample of regular route:
   #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'
   # Keep in mind you can assign values other than :controller and :action
