@@ -1,0 +1,28 @@
+<% form_for @item, :url => create_item_url do |f| %>
+    <div>
+      <%= f.label :content, "Content" %>
+      <%= f.text_area :content, :style=> "width:700;height:150"%>
+    </div>
+    <br/>
+    <div>
+      <%= f.label :category, "Category" %>
+      <%= f.select(:category, RetroItem::CATEGORIES) %>
+    </div>
+    <div>
+      <%= f.label :tag_list, "Tag List" %>
+      <%= f.text_field :tag_list %>
+    </div>
+    <div>
+      <table border="1px">
+        <th><tr><td><strong>Available Tags</strong></td></tr></th>
+      <% @available_tags.each do |tag| %>
+        <tr><td><%= f.label :sthg, tag %><br/><td/><tr/>
+      <% end %>
+      </table>
+    </div>
+    <div>
+      
+    </div>
+    <br/>
+    <%= f.submit "Save" %>
+<% end %>
