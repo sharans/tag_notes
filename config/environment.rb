@@ -15,8 +15,8 @@ Rails::Initializer.run do |config|
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
 
   config.gem "acts-as-taggable-on", :version => "2.0.6", :source => "http://gemcutter.org"
-  config.gem "rspec", :version => "1.3.0", :source => "http://gemcutter.org"
-  config.gem "rspec-rails", :version => "1.3.2", :source => "http://gemcutter.org"
+#  config.gem "rspec", :version => "1.3.0", :source => "http://gemcutter.org"
+#  config.gem "rspec-rails", :version => "1.3.2", :source => "http://gemcutter.org"
   # Specify gems that this application depends on and have them installed with rake gems:install
   # config.gem "bj"
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
