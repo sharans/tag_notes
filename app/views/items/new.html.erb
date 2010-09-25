@@ -7,7 +7,7 @@
     <br/>
     <div>
       <%= f.label :category, "Category" %>
-      <%= f.select(:category, RetroItem::CATEGORIES) %>
+      <%= f.select(:category, options_for_select(RetroItem::CATEGORIES, params[:category])) %>
     </div>
     <div>
       <%= f.label :count, "Vote/Count" %>

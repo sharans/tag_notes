@@ -2,7 +2,7 @@ ActionController::Routing::Routes.draw do |map|
   # The priority is based upon order of creation: first created -> highest priority.
 
    map.with_options :controller => "items" do |item|
-    item.new_item '/items/new', :action => "new"
+    item.new_item '/items/new/:category', :action => "new", :category => 'Wishes' 
     item.create_item '/items/create', :action => "create"
     item.tag '/items/tag/:tag', :action => "tag"
    end
