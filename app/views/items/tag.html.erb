@@ -1,9 +1,6 @@
-<h2><%= params[:tag]%></h2>
-<% RetroItem::CATEGORIES.each do |category| %>
-  <h3> <%=category%></h3>
-	<% @items.each do |item| %>
-	    <% if item.category == category %>
-		<div> <%=item.content %> </div>
-		<% end %>
-	<% end %>
+<h2><%= "#{params[:category].humanize} on #{params[:tag]}" %></h2>
+<table class="items-listing">
+<% @items.each do |item| %>
+    <tr> <td> <%= item.content %> </td></tr>
 <% end %>
+</table>

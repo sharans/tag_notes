@@ -4,7 +4,7 @@ ActionController::Routing::Routes.draw do |map|
    map.with_options :controller => "items" do |item|
     item.new_item '/items/new/:category', :action => "new", :category => 'Wishes' 
     item.create_item '/items/create', :action => "create"
-    item.tag '/items/tag/:tag', :action => "tag"
+    item.tag '/items/tag/:tag/:category', :action => "tag"
    end
    map.root :controller => "items", :action => "index"
   # Sample of regular route:

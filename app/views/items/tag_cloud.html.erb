@@ -1,3 +1,31 @@
-<% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
-  <%= link_to tag.name, { :action => :tag, :id => tag.name }, :class => css_class %>
-<% end %>
+<div class="wishes listing">
+  <h2>Wishes</h2>
+
+  <div class="tag_cloud">
+    <% tag_cloud(@wishes_tags, %w(    css1 css2 css3 css4 css5 css6   )) do |tag, css_class| %>
+        <%= link_to tag.name, tag_url(:tag => tag.name, :category => :wishes), :class => css_class, :title => "Wishes on #{tag.name}"%>
+    <% end %>
+  </div>
+</div>
+<div class="risks listing">
+  <h2>Risks</h2>
+
+  <div class="tag_cloud">
+    <% tag_cloud(@risks_tags, %w(    css1 css2 css3 css4 css5 css6   )) do |tag, css_class| %>
+        <%= link_to tag.name, tag_url(:tag => tag.name, :category => :risks), :class => css_class %>
+    <% end %>
+  </div>
+</div>
+<div id="tagged_data" style="display:none;"></div>
+
+<script type="text/javascript">
+
+    $(".tag_cloud a").fancybox({
+        'transitionIn'    :    'elastic',
+        'transitionOut'    :    'elastic',
+        'speedIn'        :    600,
+        'speedOut'        :    200,
+        'overlayShow'    :    false
+    });
+
+</script>

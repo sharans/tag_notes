@@ -1,6 +1,64 @@
-.css1 { font-size: 1.0em; }
-.css2 { font-size: 1.2em; }
-.css3 { font-size: 1.4em; }
-.css4 { font-size: 1.6em; }
-.new_content { float: left; width : 800px;}
-.available_tags {float: left; width 200px;}
+.css1 {
+    font-size: 1.0em;
+}
+
+.css2 {
+    font-size: 1.2em;
+}
+
+.css3 {
+    font-size: 1.4em;
+}
+
+.css4 {
+    font-size: 1.6em;
+}
+
+.css5 {
+    font-size: 1.8em;
+}
+
+.css6 {
+    font-size: 2.0em;
+}
+
+.listing {
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 5px #888;
+    -moz-box-shadow: 10px 10px 5px #888;
+    -webkit-box-shadow: 10px 10px 5px #888;
+}
+
+.wishes {
+    background-color: greenyellow;
+    width: 300px;
+    text-align: center;
+    padding: 5px 5px 5px 15px;
+}
+
+.risks {
+    background-color: yellow;
+    width: 300px;
+    text-align: center;
+    padding: 5px 5px 5px 15px;
+    margin-top: 10px;
+}
+
+.new_content {
+    float: left;
+    width: 800px;
+}
+
+.available_tags {
+    float: left;
+    width: 200px;
+}
+
+tr:nth-child(2n+1) {
+  background:#ffc;
+}
+
+tr {
+  background:#cef;
+}

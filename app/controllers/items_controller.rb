@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   def new
     @item = RetroItem.new
-    @available_tags = RetroItem.tag_counts
+    @available_tags = ActsAsTaggableOn::Tag.find(:all)
   end
 
   def create
@@ -14,11 +14,12 @@ class ItemsController < ApplicationController
   end
   
   def tag_cloud
-    @tags = RetroItem.tag_counts_on(:tags)
+    @wishes_tags = RetroItem.tag_counts_on(:wishes)
+    @risks_tags = RetroItem.tag_counts_on(:risks)
   end
   
   def tag
-    @items = RetroItem.tagged_with(params[:tag])
+    @items = RetroItem.tagged_with(params[:tag], :on => params[:category])
   end
   
 end
