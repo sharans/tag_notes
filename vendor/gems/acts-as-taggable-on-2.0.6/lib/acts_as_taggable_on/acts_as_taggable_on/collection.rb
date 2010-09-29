@@ -93,7 +93,7 @@ module ActsAsTaggableOn::Taggable
 
 
         ## Generate scope:
-        scope = ActsAsTaggableOn::Tag.scoped(:select => "#{ActsAsTaggableOn::Tag.table_name}.*, COUNT(*) AS count").order(options[:order]).limit(options[:limit])   
+        scope = ActsAsTaggableOn::Tag.scoped(:select => "#{ActsAsTaggableOn::Tag.table_name}.*, SUM(IFNULL (retro_items.count,1)) AS count").order(options[:order]).limit(options[:limit])
         
         # Joins and conditions
         joins.each      { |join|      scope = scope.joins(join)      }
@@ -105,7 +105,7 @@ module ActsAsTaggableOn::Taggable
         having    = [at_least, at_most].compact.join(' AND ')        
 
         if ActiveRecord::VERSION::MAJOR >= 3
-          # Append the current scope to the scope, because we can't use scope(:find) in RoR 3.0 anymore:
+          # Append the currentsum(ifnull (retro_items.count,1)) scope to the scope, because we can't use scope(:find) in RoR 3.0 anymore:
           scoped_select = "#{table_name}.#{primary_key}"
           scope = scope.where("#{ActsAsTaggableOn::Tagging.table_name}.taggable_id IN(#{select(scoped_select).to_sql})")
           

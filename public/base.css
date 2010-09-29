@@ -24,7 +24,7 @@
 
 .css1, .css2, .css3, .css4, .css5, .css6 {
     text-decoration: none;
-    text-shadow: #B6CDDB 2px 2px 2px;
+    text-shadow: #B6CDDB 0px 2px 2px;
 }
 
 .listing {
@@ -33,24 +33,35 @@
     box-shadow: 10px 10px 5px #888;
     -moz-box-shadow: 10px 10px 5px #888;
     -webkit-box-shadow: 10px 10px 5px #888;
-    -moz-transform: rotate(-5deg);
-    -webkit-transform: rotate(-5deg);
+    margin-top: 20px;
     /*text-shadow: #ffffff 2px 2px 2px;*/
 }
 
-.wishes {
+.column1 {
+    -moz-transform: rotate(-5deg);
+    -webkit-transform: rotate(-5deg);
+    float: left;
+    margin-left: 20px;
+}
+.column2 {
+    -moz-transform: rotate(5deg);
+    -webkit-transform: rotate(5deg);
+    float :right;
+    margin-right: 30px;
+}
+
+.wishes, .positives {
     background-color: greenyellow;
     width: 300px;
     text-align: center;
     padding: 5px 5px 5px 15px;
 }
 
-.risks {
+.risks, .concerns {
     background-color: yellow;
     width: 300px;
     text-align: center;
     padding: 5px 5px 5px 15px;
-    margin-top: 10px;
 }
 
 .new_content {
@@ -63,13 +74,6 @@
     width: 200px;
 }
 
-/*tr:nth-child(2n+1) {*/
-  /*background:#ffc;*/
-/*}*/
-
-/*tr {*/
-  /*background:#cef;*/
-/*}*/
 
 .item-listing {
     border-bottom:1px solid #000000;

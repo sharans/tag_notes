@@ -1,6 +1,6 @@
 class RetroItem < ActiveRecord::Base
-  acts_as_taggable_on :positives, :concerns, :wishes, :risks
-  CATEGORIES = ["Positives", "Concerns", "Wishes", "Risks"]
+  CATEGORIES = [:positives, :concerns, :wishes, :risks]
+  acts_as_taggable_on CATEGORIES
 
   def tag_list
     send(category.downcase.singularize+"_list") if category

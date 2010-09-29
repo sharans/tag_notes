@@ -14,8 +14,9 @@ class ItemsController < ApplicationController
   end
   
   def tag_cloud
-    @wishes_tags = RetroItem.tag_counts_on(:wishes)
-    @risks_tags = RetroItem.tag_counts_on(:risks)
+    RetroItem::CATEGORIES.each do |category|
+      instance_variable_set("@#{category}_tags", RetroItem.tag_counts_on(category))
+    end
   end
   
   def tag
