@@ -1,6 +1,6 @@
 <h2><%= "#{params[:category].humanize} on #{params[:tag]}" %></h2>
-<table class="items-listing">
+<div class="items-listing">
 <% @items.each do |item| %>
-    <tr> <td> <%= item.content %> </td></tr>
+    <div class="item-listing"> <%= item.content %> </div>
 <% end %>
-</table>
+</div>

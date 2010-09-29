@@ -22,12 +22,20 @@
     font-size: 2.0em;
 }
 
+.css1, .css2, .css3, .css4, .css5, .css6 {
+    text-decoration: none;
+    text-shadow: #B6CDDB 2px 2px 2px;
+}
+
 .listing {
     -moz-border-radius: 15px;
     border-radius: 15px;
     box-shadow: 10px 10px 5px #888;
     -moz-box-shadow: 10px 10px 5px #888;
     -webkit-box-shadow: 10px 10px 5px #888;
+    -moz-transform: rotate(-5deg);
+    -webkit-transform: rotate(-5deg);
+    /*text-shadow: #ffffff 2px 2px 2px;*/
 }
 
 .wishes {
@@ -55,10 +63,23 @@
     width: 200px;
 }
 
-tr:nth-child(2n+1) {
-  background:#ffc;
-}
+/*tr:nth-child(2n+1) {*/
+  /*background:#ffc;*/
+/*}*/
 
-tr {
-  background:#cef;
+/*tr {*/
+  /*background:#cef;*/
+/*}*/
+
+.item-listing {
+    border-bottom:1px solid #000000;
+    color:#204D79;
+    display:block;
+    padding:0 0 0 16px;
+    text-decoration:none;
+    background: none repeat scroll 0 0 #EFF2F6;
+}
+body {
+color:#555555;
+font:small Monaco,Geneva,Arial,Helvetica,sans-serif;
 }

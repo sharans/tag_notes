@@ -3,7 +3,7 @@
 
   <div class="tag_cloud">
     <% tag_cloud(@wishes_tags, %w(    css1 css2 css3 css4 css5 css6   )) do |tag, css_class| %>
-        <%= link_to tag.name, tag_url(:tag => tag.name, :category => :wishes), :class => css_class, :title => "Wishes on #{tag.name}"%>
+        <%= link_to tag.name, tag_url(:tag => tag.name, :category => :wishes), :class => css_class %>
     <% end %>
   </div>
 </div>
