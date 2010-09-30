@@ -36,6 +36,9 @@ class ItemsController < ApplicationController
     RetroItem::CATEGORIES.each do |category|
       instance_variable_set("@#{category}_tags", RetroItem.tag_counts_on(category))
     end
+    RetroItem::CATEGORIES.each do |category|
+      instance_variable_set("@top_#{category}", RetroItem.find_all_by_category(category.to_s, :order => 'count DESC', :limit => 10))
+    end
   end
   
   def tag
