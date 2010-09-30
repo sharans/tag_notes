@@ -24,7 +24,7 @@
 
 .css1, .css2, .css3, .css4, .css5, .css6 {
     text-decoration: none;
-    text-shadow: #B6CDDB 0px 2px 2px;
+    text-shadow:0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .listing {
@@ -34,20 +34,33 @@
     -moz-box-shadow: 10px 10px 5px #888;
     -webkit-box-shadow: 10px 10px 5px #888;
     margin-top: 20px;
-    /*text-shadow: #ffffff 2px 2px 2px;*/
 }
 
-.column1 {
-    -moz-transform: rotate(-5deg);
-    -webkit-transform: rotate(-5deg);
+.column-left {
     float: left;
     margin-left: 20px;
+    width: 25%;
 }
-.column2 {
+.column-right {
+    float :right;
+    width: 25%;
+}
+.column-middle {
+    float :left;
+    margin-left: 30px;
+    margin-top: 50px;
+    width: 40%;
+    height: 500px;
+}
+
+.risks, .wishes {
     -moz-transform: rotate(5deg);
     -webkit-transform: rotate(5deg);
-    float :right;
-    margin-right: 30px;
+}
+
+.positives, .concerns {
+    -moz-transform: rotate(-5deg);
+    -webkit-transform: rotate(-5deg);
 }
 
 .wishes, .positives {
@@ -74,7 +87,6 @@
     width: 200px;
 }
 
-
 .item-listing {
     border-bottom:1px solid #000000;
     color:#204D79;
@@ -86,4 +98,13 @@
 body {
 color:#555555;
 font:small Monaco,Geneva,Arial,Helvetica,sans-serif;
+    min-width: 1000px;
+    min-height: 600px;
+}
+
+tr:nth-child(odd) {
+    background-color: yellow;
+}
+tr:nth-child(even) {
+    background-color: greenyellow;
 }

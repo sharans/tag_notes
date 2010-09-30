@@ -5,6 +5,7 @@ ActionController::Routing::Routes.draw do |map|
     item.new_item '/items/new/:category', :action => "new", :category => 'Wishes' 
     item.create_item '/items/create', :action => "create"
     item.tag '/items/tag/:tag/:category', :action => "tag"
+    item.merge '/items/merge', :action => "merge"
    end
    map.root :controller => "items", :action => "index"
   # Sample of regular route:

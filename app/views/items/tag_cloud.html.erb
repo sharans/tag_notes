@@ -1,9 +1,9 @@
-<div class="column1">
+<div class="column-left">
   <div class="positives listing">
     <h2>We are happy about...</h2>
 
     <div class="tag_cloud">
-      <% tag_cloud(@positives_tags, %w(     css1 css2 css3 css4 css5 css6    )) do |tag, css_class| %>
+      <% tag_cloud(@positives_tags, %w(       css1 css2 css3 css4 css5 css6      )) do |tag, css_class| %>
           <%= link_to tag.name, tag_url(:tag => tag.name, :category => :positives), :class => css_class %>
       <% end %>
     </div>
@@ -13,19 +13,46 @@
     <h2>We are worried about...</h2>
 
     <div class="tag_cloud">
-      <% tag_cloud(@concerns_tags, %w(     css1 css2 css3 css4 css5 css6    )) do |tag, css_class| %>
+      <% tag_cloud(@concerns_tags, %w(       css1 css2 css3 css4 css5 css6      )) do |tag, css_class| %>
           <%= link_to tag.name, tag_url(:tag => tag.name, :category => :concerns), :class => css_class %>
       <% end %>
     </div>
   </div>
 
 </div>
-<div class="column2">
+
+<div class="column-middle">
+  <div id="accordion">
+      <h3><a href="#">Positives</a></h3>
+      <div>
+          <p>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
+      </div>
+      <h3><a href="#">Concerns</a></h3>
+      <div>
+          <p>Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In suscipit faucibus urna. </p>
+      </div>
+      <h3><a href="#">Wishes</a></h3>
+      <div>
+          <p>Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis. Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui. </p>
+          <ul>
+              <li>List item one</li>
+              <li>List item two</li>
+              <li>List item three</li>
+          </ul>
+      </div>
+      <h3><a href="#">Risks</a></h3>
+      <div>
+          <p>Cras dictum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia mauris vel est. </p><p>Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
+      </div>
+  </div>
+</div>
+
+<div class="column-right">
   <div class="wishes listing">
     <h2>Our Wishes</h2>
 
     <div class="tag_cloud">
-      <% tag_cloud(@wishes_tags, %w(     css1 css2 css3 css4 css5 css6    )) do |tag, css_class| %>
+      <% tag_cloud(@wishes_tags, %w(       css1 css2 css3 css4 css5 css6      )) do |tag, css_class| %>
           <%= link_to tag.name, tag_url(:tag => tag.name, :category => :wishes), :class => css_class %>
       <% end %>
     </div>
@@ -34,12 +61,22 @@
     <h2>Risks</h2>
 
     <div class="tag_cloud">
-      <% tag_cloud(@risks_tags, %w(     css1 css2 css3 css4 css5 css6    )) do |tag, css_class| %>
+      <% tag_cloud(@risks_tags, %w(       css1 css2 css3 css4 css5 css6      )) do |tag, css_class| %>
           <%= link_to tag.name, tag_url(:tag => tag.name, :category => :risks), :class => css_class %>
       <% end %>
     </div>
   </div>
 </div>
+
+<script>
+    $(document).ready(function() {
+        $("#accordion").accordion({
+            event: "mouseover",
+            collapsible: true
+        });
+    });
+</script>
+
 <script type="text/javascript">
 
     $(".tag_cloud a").fancybox({

@@ -1,0 +1,15 @@
+<% RetroItem::CATEGORIES.each do |category| %>
+    <% form_tag('/items/merge') do %>
+        <div><span style="font-size:medium;"><%= category %></span> <%= submit_tag :merge%></div>
+        <table>
+          <% @items.each do |item| %>
+              <% next unless item.category.downcase == category.to_s %>
+              <tr>
+                <td><%= check_box_tag 'merge_ids[]', item.id %></td>
+                <td><%= item.content %></td>
+                <td><%= item.tag_list %></td>
+              </tr>
+          <% end %>
+        </table>
+    <% end %>
+<% end %>

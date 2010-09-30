@@ -9,4 +9,5 @@ class RetroItem < ActiveRecord::Base
   def tag_list=(tags)
     send(category.downcase.singularize+"_list=", tags) if category
   end
+
 end

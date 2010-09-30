@@ -12,6 +12,25 @@ class ItemsController < ApplicationController
 
   def index
   end
+
+  def merge
+    return unless params[:merge_ids]
+    items = RetroItem.find(params[:merge_ids])
+    first_item = items.first
+    puts items.inspect
+    items.each do |item|
+      next if (item.category.downcase != first_item.category.downcase or item == first_item)
+      first_item.tag_list.add(item.tag_list)
+      first_item.update_attribute(:count, first_item.count + item.count)
+      item.destroy
+    end
+    first_item.save!
+    redirect_to :action => :list
+  end
+  
+  def list
+    @items = RetroItem.all
+  end
   
   def tag_cloud
     RetroItem::CATEGORIES.each do |category|
