@@ -34,7 +34,7 @@
         <div>
           <ol>
             <% items.each do |item| %>
-                <li><%= item.content %></li>
+                <li><%= item.content.humanize %></li>
             <% end %>
           </ol>
         </div>
@@ -63,10 +63,26 @@
   </div>
 </div>
 
+  <div id="myScroll">
+    <div class="scrollEl" >1</div>
+    <div class="scrollEl" >2</div>
+    <div class="scrollEl" >3</div>
+    <div class="scrollEl" >4</div>
+    <div class="scrollEl" >5</div>
+    <div class="scrollEl" >6</div>
+    <div class="scrollEl" >7</div>
+    <div class="scrollEl" >8</div>
+  </div>
+
+  <div id="controls">
+    <div class="prev">prev</div>
+    <div class="next">next</div>
+    <div class="pageIndex"></div>
+  </div>
+
 <script>
     $(document).ready(function() {
         $("#accordion").accordion({
-            event: "mouseover",
             collapsible: true
         });
     });
@@ -79,7 +95,21 @@
         'transitionOut'    :    'elastic',
         'speedIn'        :    600,
         'speedOut'        :    200,
-        'overlayShow'    :    false
+        'overlayShow'    :    true
     });
-
+</script>
+<script type="text/javascript">
+  $(function(){
+    $("#myScroll").mbScrollable({
+      width:700,
+      elementsInPage:3,
+      elementMargin:4,
+      shadow:"#999 2px 2px 2px",
+      height:"auto",
+      controls:"#controls",
+      slideTimer:600,
+      autoscroll:true,
+      scrollTimer:2000
+    });
+  });
 </script>

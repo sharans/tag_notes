@@ -7,7 +7,7 @@
     <br/>
     <div>
       <%= f.label :category, "Category" %>
-      <%= f.select(:category, options_for_select(RetroItem::CATEGORIES, params[:category])) %>
+      <%= f.select(:category, options_for_select(RetroItem::CATEGORIES, params[:category].to_sym)) %>
     </div>
     <div>
       <%= f.label :count, "Vote/Count" %>
@@ -24,7 +24,7 @@
 <% end %>
 <div class="available_tags">
   <h2>Available Tags</h2>
-  <% @available_tags.each do |tag| %>
+  <% @available_tags.collect(&:name).sort.each do |tag| %>
     <div><%= check_box_tag tag, tag, false, :class => 'tags' %> <%= tag%></div>
   <% end %>
 </div>

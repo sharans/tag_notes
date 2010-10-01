@@ -73,7 +73,7 @@
 }
 
 .concerns {
-    background-color: yellow;
+    background-color: orange;
 }
 
 .wishes {
@@ -81,7 +81,7 @@
 }
 
 .risks {
-    background-color: orange;
+    background-color: yellow;
 }
 
 .new_content {
@@ -103,6 +103,9 @@
     background: none repeat scroll 0 0 #EFF2F6;
 }
 
+.ui-widget {
+        font: small Monaco, Geneva, Arial, Helvetica, sans-serif !important;
+}
 body {
     color: #555555;
     font: small Monaco, Geneva, Arial, Helvetica, sans-serif;
@@ -116,4 +119,8 @@ tr:nth-child(odd) {
 
 tr:nth-child(even) {
     background-color: greenyellow;
+}
+
+.scrollE1 {
+    -moz-box-shadow: 2px 2px 2px rgb(153, 153, 153); display: block; background-color: rgb(153, 153, 255);
 }
