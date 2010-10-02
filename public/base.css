@@ -33,7 +33,6 @@
     box-shadow: 10px 10px 5px #888;
     -moz-box-shadow: 10px 10px 5px #888;
     -webkit-box-shadow: 10px 10px 5px #888;
-    margin-top: 50px;
     width: 300px;
     text-align: center;
     padding: 5px 5px 5px 15px;
@@ -53,9 +52,9 @@
 .column-middle {
     float: left;
     margin-left: 30px;
-    margin-top: 50px;
-    width: 40%;
-    height: 500px;
+    margin-right: 30px;
+    width: 43%;
+    height: 450px;
 }
 
 .column-left > .listing {
@@ -66,6 +65,10 @@
 .column-right > .listing {
     -moz-transform: rotate(5deg);
     -webkit-transform: rotate(5deg);
+}
+
+.column-left > .concerns, .column-right > .risks {
+    margin-top: 30px;
 }
 
 .positives {
@@ -121,6 +124,16 @@ tr:nth-child(even) {
     background-color: greenyellow;
 }
 
-.scrollE1 {
-    -moz-box-shadow: 2px 2px 2px rgb(153, 153, 153); display: block; background-color: rgb(153, 153, 255);
+.action-heading {
+    font-weight: bold;
+    float: left;
+}
+
+.controls {
+    height:auto;
+    overflow:hidden;
+    padding-bottom:5px;
+    position:relative;
+    width:50px;
+    float: left;
 }
