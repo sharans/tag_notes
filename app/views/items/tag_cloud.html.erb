@@ -58,8 +58,8 @@
   </div>
 </div>
 
-<div style="width:50%; float:left; margin-left:40%; font-size:large; font-weight:bold; margin-top:30px;"> Action Items / Suggestions </div>
-<div style="width:80%; float:left; margin-left:45%; position:relative; left:-500">
+<div style="width:70%; float:left; margin-left:20%; font-size:large; font-weight:bold; margin-top:30px;"> Action Items / Suggestions </div>
+<div style="width:75%; float:left;">
   <div class="controls">
     <div class="prev">prev</div>
   </div>
@@ -200,12 +200,23 @@
     <div class="next">next</div>
   </div>
 </div>
+<div class="image-slider">
+  <img id="myphoto" height="175px" width="250px"/>
+</div>
 <script>
     $(document).ready(function() {
         $("#accordion").accordion({
             collapsible: true
         });
     });
+    var imageIndex = 1;
+    function mySlider() {
+        $("#myphoto").attr("src", "/images/"+imageIndex+".jpg");
+        imageIndex++;
+        imageIndex = (imageIndex % 7) + 1;
+        setTimeout("mySlider()", 2000);
+    }
+    mySlider();
 </script>
 
 <script type="text/javascript">
