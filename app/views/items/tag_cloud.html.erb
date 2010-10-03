@@ -1,8 +1,7 @@
 <div align="center" style="font-size:large; font-weight:bold;"> Chennai Office Retro - 2010</div>
 <div class="column-left">
   <div class="positives listing">
-    <h2>We are happy about...</h2>
-
+    <div align="center" style="font-size:large; font-weight:bold; margin:5px;">We are happy about...</div>
     <div class="tag_cloud">
       <% tag_cloud(@positives_tags, %w(             css1 css2 css3 css4 css5 css6            )) do |tag, css_class| %>
           <%= link_to tag.name, tag_url(:tag => tag.name, :category => :positives), :class => css_class %>
@@ -11,8 +10,7 @@
   </div>
 
   <div class="concerns listing">
-    <h2>We are worried about...</h2>
-
+    <div align="center" style="font-size:large; font-weight:bold; margin:5px;">We are worried about...</div>
     <div class="tag_cloud">
       <% tag_cloud(@concerns_tags, %w(             css1 css2 css3 css4 css5 css6            )) do |tag, css_class| %>
           <%= link_to tag.name, tag_url(:tag => tag.name, :category => :concerns), :class => css_class %>
@@ -23,8 +21,7 @@
 </div>
 
 <div class="column-middle">
-  <h2>Most common</h2>
-
+  <div align="left" style="font-size:large; font-weight:bold; margin:5px;">Most common</div>
   <div id="accordion">
     <% RetroItem::CATEGORIES.each do |category|
         items = instance_variable_get("@top_#{category}")
@@ -44,8 +41,7 @@
 
 <div class="column-right">
   <div class="wishes listing">
-    <h2>Our Wishes</h2>
-
+    <div align="center" style="font-size:large; font-weight:bold; margin:5px;">Our Wishes</div>
     <div class="tag_cloud">
       <% tag_cloud(@wishes_tags, %w(             css1 css2 css3 css4 css5 css6            )) do |tag, css_class| %>
           <%= link_to tag.name, tag_url(:tag => tag.name, :category => :wishes), :class => css_class %>
@@ -53,8 +49,7 @@
     </div>
   </div>
   <div class="risks listing">
-    <h2>Risks</h2>
-
+    <div align="center" style="font-size:large; font-weight:bold; margin:5px;">Risks</div>
     <div class="tag_cloud">
       <% tag_cloud(@risks_tags, %w(             css1 css2 css3 css4 css5 css6            )) do |tag, css_class| %>
           <%= link_to tag.name, tag_url(:tag => tag.name, :category => :risks), :class => css_class %>
@@ -63,7 +58,7 @@
   </div>
 </div>
 
-<div style="width:50%; float:left; margin-left:40%; font-size:large; font-weight:bold;"> Action Items / Suggestions </div>
+<div style="width:50%; float:left; margin-left:40%; font-size:large; font-weight:bold; margin-top:30px;"> Action Items / Suggestions </div>
 <div style="width:80%; float:left; margin-left:45%; position:relative; left:-500">
   <div class="controls">
     <div class="prev">prev</div>
@@ -200,7 +195,7 @@
             shadow:"#999 2px 2px 2px",
             height:"auto",
             controls:".controls",
-            slideTimer:600,
+            slideTimer:1000,
             autoscroll:false,
             scrollTimer:2000
         });

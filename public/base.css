@@ -42,11 +42,13 @@
     float: left;
     margin-left: 20px;
     width: 25%;
+    height: 450px;
 }
 
 .column-right {
     float: right;
     width: 25%;
+    height: 450px;
 }
 
 .column-middle {
@@ -135,6 +137,8 @@ tr:nth-child(even) {
 .action-heading {
     font-weight: bold;
     float: left;
+    color:chocolate;
+    width: 100%;
 }
 
 .controls {

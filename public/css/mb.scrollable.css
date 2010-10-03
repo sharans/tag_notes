@@ -54,7 +54,7 @@
 .controls div, #controls1 div{
   /*font-family:sans-serif;*/
   margin-top:5px;
-  background:#fff;
+  background:orange;
   display:inline-block;
   padding:6px;
   cursor:pointer;
@@ -74,7 +74,7 @@
   font-weight:bold;
 }
 .controls .disabled, #controls1 .disabled{
-  color:gray;
+  background: lightgray;
 }
 .controls .page, #controls1 .page{
   padding:5px;
