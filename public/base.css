@@ -57,6 +57,14 @@
     height: 450px;
 }
 
+.tag_cloud > a{
+    color: mediumblue;
+}
+
+.tag_cloud > a:hover{
+    color: forestgreen;
+}
+
 .column-left > .listing {
     -moz-transform: rotate(-5deg);
     -webkit-transform: rotate(-5deg);

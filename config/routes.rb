@@ -6,6 +6,8 @@ ActionController::Routing::Routes.draw do |map|
     item.create_item '/items/create', :action => "create"
     item.tag '/items/tag/:tag/:category', :action => "tag"
     item.merge '/items/merge', :action => "merge"
+    item.edit_item '/items/edit/:id', :action => "edit"
+    item.update_item '/items/update/:id', :action => "update"
     item.tag_cloud '/', :action => 'tag_cloud'
    end
    map.root :controller => "items", :action => "index"

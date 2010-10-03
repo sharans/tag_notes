@@ -6,7 +6,7 @@
               <% next unless item.category.downcase == category.to_s %>
               <tr>
                 <td><%= check_box_tag 'merge_ids[]', item.id %></td>
-                <td><%= item.content %></td>
+                <td><a href="<%= edit_item_url(item.id)%>"><%= item.content %></a></td>
                 <td><%= item.tag_list %></td>
               </tr>
           <% end %>

@@ -13,6 +13,16 @@ class ItemsController < ApplicationController
   def index
   end
 
+  def edit
+    @item = RetroItem.find(params[:id])
+    @available_tags = ActsAsTaggableOn::Tag.find(:all)
+  end
+
+  def update
+    RetroItem.find(params[:id]).update_attributes!(params[:retro_item])
+    redirect_to :action => :list
+  end
+
   def merge
     return unless params[:merge_ids]
     items = RetroItem.find(params[:merge_ids])
@@ -27,11 +37,11 @@ class ItemsController < ApplicationController
     first_item.save!
     redirect_to :action => :list
   end
-  
+
   def list
     @items = RetroItem.all
   end
-  
+
   def tag_cloud
     RetroItem::CATEGORIES.each do |category|
       instance_variable_set("@#{category}_tags", RetroItem.tag_counts_on(category))
@@ -40,9 +50,9 @@ class ItemsController < ApplicationController
       instance_variable_set("@top_#{category}", RetroItem.find_all_by_category(category.to_s, :order => 'count DESC', :limit => 10))
     end
   end
-  
+
   def tag
     @items = RetroItem.tagged_with(params[:tag], :on => params[:category])
   end
-  
+
 end
