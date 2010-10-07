@@ -2,15 +2,15 @@ ActionController::Routing::Routes.draw do |map|
   # The priority is based upon order of creation: first created -> highest priority.
 
    map.with_options :controller => "items" do |item|
-    item.new_item '/items/new/:category', :action => "new", :category => 'Wishes' 
-    item.create_item '/items/create', :action => "create"
+#    item.new_item '/items/new/:category', :action => "new", :category => 'Wishes'
+#    item.create_item '/items/create', :action => "create"
     item.tag '/items/tag/:tag/:category', :action => "tag"
-    item.merge '/items/merge', :action => "merge"
-    item.edit_item '/items/edit/:id', :action => "edit"
-    item.update_item '/items/update/:id', :action => "update"
+#    item.merge '/items/merge', :action => "merge"
+#    item.edit_item '/items/edit/:id', :action => "edit"
+#    item.update_item '/items/update/:id', :action => "update"
     item.tag_cloud '/', :action => 'tag_cloud'
    end
-   map.root :controller => "items", :action => "index"
+#   map.root :controller => "items", :action => "index"
   # Sample of regular route:
   #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'
   # Keep in mind you can assign values other than :controller and :action
@@ -48,6 +48,6 @@ ActionController::Routing::Routes.draw do |map|
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
   # consider removing or commenting them out if you're using named routes and resources.
-  map.connect ':controller/:action/:id'
-  map.connect ':controller/:action/:id.:format'
+#  map.connect ':controller/:action/:id'
+#  map.connect ':controller/:action/:id.:format'
 end
