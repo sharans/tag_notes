@@ -53,7 +53,7 @@
 
 .controls div, #controls1 div{
   /*font-family:sans-serif;*/
-  margin-top:5px;
+  margin:2px;
   background:orange;
   display:inline-block;
   padding:6px;

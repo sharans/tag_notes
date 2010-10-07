@@ -147,9 +147,9 @@ tr:nth-child(even) {
 
 .action-heading {
     font-weight: bold;
-    float: left;
     color:chocolate;
     width: 100%;
+    margin-bottom: 5px;
 }
 
 .controls {
